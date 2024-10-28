@@ -124,8 +124,8 @@ main {
     margin: 0 auto;
   }
   .cards .b1, .cards .b2, .cards .b3, .cards .b4 {
-    max-height: 250px;
-    max-width: 350px;
+    min-height: 250px;
+    min-width: 350px;
     flex-shrink: 1;
   }
 }/*# sourceMappingURL=styles.css.map */

@@ -105,8 +105,8 @@ main{
     min-width: 1110px;
     margin: 0 auto;
     .b1, .b2, .b3, .b4{
-      max-height: 250px;
-      max-width: 350px;
+      min-height: 250px;
+      min-width: 350px;
       flex-shrink: 1;
     }
   }

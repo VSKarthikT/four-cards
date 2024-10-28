@@ -1,0 +1,113 @@
+@import 'global';
+/* mixins */
+@mixin flex($direction){
+  display: flex;
+  flex-direction: $direction;
+}
+@mixin flex_center(){
+  justify-content: center;
+  align-items: center;
+}
+@mixin border(){
+  .b1{
+    border-top: 5px solid $supervisor-color;
+  }
+  .b2{
+    border-top: 5px solid $team-builder-color;
+  }
+  .b3{
+    border-top: 5px solid $karma-color;
+  }
+  .b4{
+    border-top: 5px solid $calc-color;
+  }
+}
+
+main{
+  @include flex(column);
+  gap: 40px;
+}
+.Heading {
+  @include flex(column);
+  text-align: center;
+  max-width: 33.75rem;
+  width: 100%;
+  @include flex_center();
+  margin: 0 auto;
+  /* note : change styles when desktop*/
+  p:nth-child(1){
+    font-weight: $font-weight-head1;
+    font-size: $mobile-font-sz-head1-head2;
+    color: rgb(74, 73, 73);
+  }
+  p:nth-child(2){
+    font-weight: $font-weight-head2-headcard;
+    font-size: $mobile-font-sz-head1-head2; 
+  }
+  p:nth-child(3){
+    font-weight: $font-weight-head3-subcard;
+    font-size: $Desktop-mobile-font-sz-head3;
+    color: $common-color; 
+    padding-top: 16px;
+  }
+}
+.cards{
+  @include border();
+  @include flex(column);
+  @include flex_center();
+  gap: 20px;
+  .merge_box, .wrapper_super, .wrapper_calc{
+    @include flex(column);
+    @include flex_center();
+    gap: 20px;
+    width: 100%;
+    max-width: 28.125rem;
+  }
+  .super_container, .team_container, .karma_container, .calc_container{
+    @include flex(column);
+    max-width: 28.125rem;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 4px 15px -6px rgba(0,0,0,0.75);
+    img{
+      margin-left: auto;
+      padding-top: 20px;
+    }
+    padding: 30px;
+    p:nth-child(1){
+      font-weight: $font-weight-head2-headcard;
+      font-size: $Desk-mob-font-sz-card-head;
+      color: rgb(74, 73, 73);
+    }
+    p:nth-child(2){
+      font-weight: $font-weight-head3-subcard;
+      font-size: $Desk-mob-font-sz-card-sub-head;
+      color: $common-color;
+    }
+  }
+
+}
+@media (min-width: 69.375rem){
+  .Heading{
+    p:nth-child(1){
+      font-size: $Desktop-font-sz-head1-head2;
+    }
+    p:nth-child(2){
+      font-size: $Desktop-font-sz-head1-head2;
+    }
+
+  }
+  .cards{
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+    min-height:530px;
+    min-width: 1110px;
+    margin: 0 auto;
+    .b1, .b2, .b3, .b4{
+      max-height: 250px;
+      max-width: 350px;
+      flex-shrink: 1;
+    }
+  }
+}
